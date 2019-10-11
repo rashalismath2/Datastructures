@@ -5,7 +5,12 @@
  */
 package datastructures;
 
-import datastructures.DoublyLinkedList.DoublyLinkedList;
+import BinarySearch.Bst;
+import BinarySearch.Node;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
+
 
 /**
  *
@@ -18,19 +23,19 @@ public class Main {
      */
     public static void main(String[] args) {
         
-    DoublyLinkedList list=new DoublyLinkedList();
-    list.InsertAtStart(5);
-    list.InsertAtStart(6);
-    
-    list.ShowAll();
-       list.InsertAtStart(7);
-        list.ShowAll();
-    list.ReverseAll();
-        list.ShowAll();
-     list.InsertAtStart(4);
-     list.ShowAll();
-        list.ReverseAll();
-          list.ShowAll();
+        Bst bst=new Bst();
+  
+        Node root=bst.Insert(null, 100);
+        bst.Insert(root, 90);
+        bst.Insert(root, 80);
+        bst.Insert(root, 70);
+        bst.Insert(root, 60);
+        bst.Insert(root, 50);
+        bst.Insert(root, 120);
+        bst.Search(root,50);
+        
+        System.out.println(bst.min(root));
+        System.out.println(bst.Height(root));
+        
     }
-    
 }
