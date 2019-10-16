@@ -7,6 +7,7 @@ package datastructures;
 
 import BinarySearch.Bst;
 import BinarySearch.Node;
+import Queue.Queue;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -31,11 +32,14 @@ public class Main {
         bst.Insert(root, 70);
         bst.Insert(root, 60);
         bst.Insert(root, 50);
-        bst.Insert(root, 120);
-        bst.Search(root,50);
+          bst.Insert(root, 120);
+//        bst.Search(root,50);
         
-        System.out.println(bst.min(root));
-        System.out.println(bst.Height(root));
+//        System.out.println(bst.min(root));
+//        System.out.println(bst.Height(root));
+        
+bst.BreadthFirst(root);
+        
         
     }
 }

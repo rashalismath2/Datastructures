@@ -5,13 +5,31 @@
  */
 package BinarySearch;
 
+import Queue.Queue;
+import Queue.Node;
+
+
 /**
  *
  * @author Ismath
  */
 public class Bst {
     
-    public int Height(Node root){
+    public void BreadthFirst(BinarySearch.Node root){
+        Queue q=new Queue();
+        q.Enque(root);
+        
+        while(!q.IsEmpty()){
+            Node front=q.getFront();
+            System.out.println(front.getNode().getData());
+            if(front.getNode().getLeft()!=null){q.Enque(front.getNode().getLeft());}
+            if(front.getNode().getRight()!=null){q.Enque(front.getNode().getRight());}
+            q.Deque();
+        }
+        
+    }
+    
+    public int Height(BinarySearch.Node root){
         
         if(root==null){
         return -1;
@@ -23,21 +41,21 @@ public class Bst {
         return Math.max(heightLeft,heightRight)+1;
     }
     
-    public int min(Node root){
+    public int min(BinarySearch.Node root){
         if(root.getLeft()==null) {
             return root.getData();
         };
-        Node tmp=root;
+        BinarySearch.Node tmp=root;
         while(tmp.getLeft()!=null){
             tmp=tmp.getLeft();
         }
         return tmp.getData();
     }
 
-    public Node Insert(Node root,int data){
+    public BinarySearch.Node Insert(BinarySearch.Node root,int data){
         
         if(root==null){
-            root=new Node();
+            root=new BinarySearch.Node();
             root.setData(data);
             return root;
         }
@@ -51,7 +69,7 @@ public class Bst {
         return root;
     }
     
-    public boolean Search(Node root,int data){
+    public boolean Search(BinarySearch.Node root,int data){
         
         if(root==null){return false;}
         else if(root.getData()==data){
